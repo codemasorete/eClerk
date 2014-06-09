@@ -18,7 +18,7 @@ For instance, if I wanted a 7 new Day Planner notes created for the coming week,
 The format of the note titles: &lt;Day of year&gt; &lt;Day of week&gt;, &lt;Day of month&gt; &lt;month&gt;
 
 
-evernote_config.rb (example below) will need to be added once you obtain an Evernote API key
+**_everClerk/evernote_config.rb_** will need to be added once you obtain an Evernote API key
 ```ruby
 # Load libraries required by the Evernote OAuth sample applications
 require 'oauth'
