@@ -19,7 +19,7 @@ The format of the note titles: &lt;Day of year&gt; &lt;Day of week&gt;, &lt;Day 
 
 
 evernote_config.rb (example below) will need to be added once you obtain an Evernote API key
---
+```ruby
 # Load libraries required by the Evernote OAuth sample applications
 require 'oauth'
 require 'oauth/consumer'
@@ -35,4 +35,3 @@ OAUTH_CONSUMER_KEY = "...."
 OAUTH_CONSUMER_SECRET = "...."
 
 SANDBOX = true
---
