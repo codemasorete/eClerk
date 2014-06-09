@@ -16,3 +16,23 @@ For instance, if I wanted a 7 new Day Planner notes created for the coming week,
 165 Saturday, 14 Jun
 
 The format of the note titles: &lt;Day of year&gt; &lt;Day of week&gt;, &lt;Day of month&gt; &lt;month&gt;
+
+
+evernote_config.rb (example below) will need to be added once you obtain an Evernote API key
+--
+# Load libraries required by the Evernote OAuth sample applications
+require 'oauth'
+require 'oauth/consumer'
+
+# Load Thrift & Evernote Ruby libraries
+require "evernote_oauth"
+
+# Client credentials
+# Fill these in with the consumer key and consumer secret that you obtained
+# from Evernote. If you do not have an Evernote API key, you may request one
+# from http://dev.evernote.com/documentation/cloud/
+OAUTH_CONSUMER_KEY = "...."
+OAUTH_CONSUMER_SECRET = "...."
+
+SANDBOX = true
+--
