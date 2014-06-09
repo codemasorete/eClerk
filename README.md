@@ -1,5 +1,4 @@
 everClerk
-
 ==============================
 
 A simple Ruby application, using Sinatra, to automate daily Evernote tasks through Evernote Cloud API.
