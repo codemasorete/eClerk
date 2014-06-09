@@ -9,17 +9,11 @@ Evernote is an excellent app. EverClerk is intended to augment EverNote features
 For instance, if I wanted a 7 new Day Planner notes created for the coming week, I can automate it with a click that will leave me the following 7 new notes in the Day Planner notebook:
 
 159 Sunday, 08 Jun
-
 160 Monday, 09 Jun
-
 161 Tuesday, 10 Jun
-
 162 Wednesday, 11 Jun
-
 163 Thursday, 12 Jun
-
 164 Friday, 13 Jun
-
 165 Saturday, 14 Jun
 
 The format of the note titles: &lt;Day of year&gt; &lt;Day of week&gt;, &lt;Day of month&gt; &lt;month&gt;
