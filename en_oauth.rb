@@ -105,7 +105,7 @@ end
 # create planner pages for next 30 days
 ##
 get '/generate' do
-
+binding.pry
     dayPlannerNotesMetadataList = getDayPlannerNotes
     if session[:day_planner_guid] != 0
       today = Time.new
@@ -252,7 +252,7 @@ __END__
   <a href="/generate">Click here</a> to generate notes.<br>
   <a href="/cleanup">Click here</a> to cleanup notes.<br>
 
-  <h3> Test number: <%= session[:test] %> </h3>
+  <!--
   <% if session[:notebooks] %>
   <hr />
   <h3>The current user is <%= session[:username] %> and there are <%= session[:total_notes] %> notes in their account</h3>
@@ -264,6 +264,8 @@ __END__
     <% end %>
   </ul>
   <% end %>
+  -->
+  
 </body>
 </html>
 
