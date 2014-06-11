@@ -97,7 +97,6 @@ end
 # Index page
 ##
 get '/' do
-
   erb :index
 end
 
@@ -105,7 +104,6 @@ end
 # create planner pages for next 30 days
 ##
 get '/generate' do
-binding.pry
     dayPlannerNotesMetadataList = getDayPlannerNotes
     if session[:day_planner_guid] != 0
       today = Time.new
@@ -117,9 +115,13 @@ binding.pry
         note.notebookGuid = session[:day_planner_guid]
         note.content = "<!DOCTYPE en-note SYSTEM \"http://xml.evernote.com/pub/enml2.dtd\">
         <en-note>  
-    <en-todo/>QT   
-    <en-todo/>
-    <en-todo/>Prayer  
+    <div><en-todo/>Time in the Word</div>
+    <div><en-todo/></div>
+    <div><en-todo/>Prayer</div>
+    <br/>
+    <br/>
+    <b>Day Scribbles</b>:
+    <br/>  
         </en-note>
         "
         noteExists = false
@@ -135,6 +137,7 @@ binding.pry
             note_store.createNote(auth_token, note);
         end
       end
+     session[:message] = "New Day Planner notes created successfully!" 
      redirect '/'
     end
 end
@@ -161,6 +164,7 @@ get '/cleanup' do
         note_store.deleteNote(auth_token, dayPlannerNote.guid)
       end
     end
+    session[:message] = "Outdated Day Planner notes cleared successfully!"
     redirect '/'
 end
 
@@ -245,12 +249,14 @@ __END__
 @@ index
 <html>
 <head>
-  <title>Evernote Ruby Example App</title>
+  <title>eClerk - Evernote Task Automation</title>
 </head>
 <body>
   <a href="/requesttoken">Click here</a> to authenticate this application using OAuth. <br>
-  <a href="/generate">Click here</a> to generate notes.<br>
-  <a href="/cleanup">Click here</a> to cleanup notes.<br>
+  <a href="/generate">Click here</a> to generate <i>Day Planner</i> notes.<br>
+  <a href="/cleanup">Click here</a> to cleanup <i>Day Planner</i> notes.<br>
+
+  <h3><%= session[:message] %></h3>
 
   <!--
   <% if session[:notebooks] %>
@@ -272,7 +278,7 @@ __END__
 @@ error 
 <html>
 <head>
-  <title>Evernote Ruby Example App &mdash; Error</title>
+  <title>eClerk - EverNote task Automation &mdash; Error</title>
 </head>
 <body>
   <p>An error occurred: <%= @last_error %></p>
